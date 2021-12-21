@@ -475,6 +475,7 @@ header{
     align-items: center;
     justify-content: center;
     background: var(--tertiary-color);
+    width: 100vw;
 }
 
 .skills .container{
