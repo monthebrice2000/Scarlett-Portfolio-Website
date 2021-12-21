@@ -411,6 +411,65 @@ header{
 
 }
 
+.services{
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-basis: 97%; */
+    width: 100vw;
+}
+
+.services .container{
+    flex-basis: 83%;
+    display: flex;
+    padding: 2vw 0;
+    justify-content: center;
+    flex-flow: wrap row;
+    gap: 2vw;
+}
+
+.services .container .service::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transform-origin: center;
+    transition: transform .2s cubic-bezier(1,0,0,1);
+    transform: scaleX(0);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.services .container .service:hover::before{
+    transition: transform .2s cubic-bezier(1,0,0,1);
+    transform: scaleX(1);
+    z-index: -1;
+}
+
+.services .container .service{
+    font-size: calc(1.5vw );
+    flex-basis: 25%;
+    background: var(--secondary-color);
+    padding: 1.7vw 1.3vw;
+    position: relative;
+    z-index: 2;
+    border: 1px solid var(--secondary-color);
+}
+
+.services .container .service span,
+.services .container .service p{
+    color: white;
+    font-size: 2rem;
+    font-family: 'Indie Flower';
+}
+
+.services .container .service h1{
+    font-size: 3rem;
+}
+
 
 @media only screen and ( max-width: 550px ) {
     header{
@@ -560,6 +619,13 @@ header{
     .abouts .container .description p{
         /* width: 100%; */
         word-break: break-word;
+    }
+
+    .services .container{
+        flex-flow: wrap column;
+    }
+    .services .container .service{
+        flex-basis: 100%;
     }
 
 
